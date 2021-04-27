@@ -1,10 +1,7 @@
 # blob-uploader
+This is an example Clojure web application written using the Duct framework.
 
-[![CircleCI](https://circleci.com/gh/chrishowejones/blog-blob-uploader.svg?style=svg)](https://circleci.com/gh/chrishowejones/blog-blob-uploader)
-
-This is an example Clojure web application written using the Duct
-framework. This code is referenced by my blog on [Building a Clojure
-web application using Duct](https://circleci.com/blog/build-a-clojure-web-app-using-duct/).
+This project is based on the following blog article [Building a Clojure web application using Duct](https://circleci.com/blog/build-a-clojure-web-app-using-duct/).
 
 ## Developing
 
