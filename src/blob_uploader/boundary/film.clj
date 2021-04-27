@@ -1,4 +1,4 @@
-(ns film-ratings.boundary.film
+(ns blob-uploader.boundary.film
   (:require [clojure.java.jdbc :as jdbc]
             duct.database.sql)
   (:import java.sql.SQLException))

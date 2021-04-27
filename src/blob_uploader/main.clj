@@ -1,4 +1,4 @@
-(ns film-ratings.main
+(ns blob-uploader.main
   (:gen-class)
   (:require [clojure.java.io :as io]
             [duct.core :as duct]))
@@ -7,6 +7,6 @@
 
 (defn -main [& args]
   (let [keys (or (duct/parse-keys args) [:duct/migrator :duct/daemon])]
-    (-> (duct/read-config (io/resource "film_ratings/config.edn"))
+    (-> (duct/read-config (io/resource "blob_uploader/config.edn"))
         (duct/prep keys)
         (duct/exec keys))))

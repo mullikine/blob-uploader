@@ -1,5 +1,5 @@
-(ns film-ratings.views.index
-  (:require [film-ratings.views.template :refer [page]]))
+(ns blob-uploader.views.index
+  (:require [blob-uploader.views.template :refer [page]]))
 
 (defn list-options []
   (page

@@ -1,5 +1,5 @@
-(ns film-ratings.views.film
-  (:require [film-ratings.views.template :refer [page labeled-radio]]
+(ns blob-uploader.views.film
+  (:require [blob-uploader.views.template :refer [page labeled-radio]]
             [hiccup.form :refer [form-to label text-field text-area submit-button]]
             [ring.util.anti-forgery :refer [anti-forgery-field]]))
 

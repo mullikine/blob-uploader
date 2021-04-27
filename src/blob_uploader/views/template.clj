@@ -1,4 +1,4 @@
-(ns film-ratings.views.template
+(ns blob-uploader.views.template
   (:require [hiccup.page :refer [html5 include-css include-js]]
             [hiccup.element :refer [link-to]]
             [hiccup.form :as form]))
