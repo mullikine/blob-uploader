@@ -9,6 +9,8 @@ configure_aws_cli(){
 	aws configure set default.output json
 }
 
+# This deploys to the cluster
+# The cluster is created with =terraform apply=
 deploy_cluster() {
 
     family="blob_uploader_app"
