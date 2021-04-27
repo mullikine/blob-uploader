@@ -5,7 +5,7 @@ JQ="jq --raw-output --exit-status"
 
 configure_aws_cli(){
 	aws --version
-	aws configure set default.region eu-west-1 # change this if your AWS region differs
+	aws configure set default.region us-west-1 # change this if your AWS region differs
 	aws configure set default.output json
 }
 
@@ -64,7 +64,7 @@ make_task_def(){
                       "logDriver": "awslogs",
                       "options": {
                         "awslogs-group": "blob_uploader_app",
-                        "awslogs-region": "eu-west-1",
+                        "awslogs-region": "us-west-1",
                         "awslogs-stream-prefix": "ecs"
                       }
                     },
