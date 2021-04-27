@@ -11,6 +11,8 @@ configure_aws_cli(){
 
 # This deploys to the cluster
 # The cluster is created with =terraform apply=
+# I must first configure this to use ubuntu 20
+# $MYGIT/mullikine/blob-uploader-terraform/launch-configuration.tf
 deploy_cluster() {
 
     family="blob_uploader_app"
