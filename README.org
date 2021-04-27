@@ -90,6 +90,10 @@ password for the postgresql database. You can then bring up the
 postgresql, migrations and web application docker instances using
 =docker-compose=.
 
+#+BEGIN_SRC sh -n :sps bash :async :results none
+  DB_PASSWORD=admin docker-compose up -d
+#+END_SRC
+
 #+BEGIN_SRC sh
     docker-compose up -d
 #+END_SRC
