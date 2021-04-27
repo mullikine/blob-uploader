@@ -23,7 +23,7 @@
     (let [blob (blob-form->blob blob-form)
           result (boundary.blob/create-blob db blob)
           alerts (if (:id result)
-                   {:messages ["Film added"]}
+                   {:messages ["Blob added"]}
                    result)]
       [::response/ok (views.blob/blob-view blob alerts)])))
 

@@ -3,12 +3,12 @@
             duct.database.sql)
   (:import java.sql.SQLException))
 
-(defprotocol FilmDatabase
+(defprotocol BlobDatabase
   (list-blobs [db])
   (fetch-blobs-by-name [db name])
   (create-blob [db blob]))
 
-(extend-protocol FilmDatabase
+(extend-protocol BlobDatabase
   duct.database.sql.Boundary
   (list-blobs [{db :spec}]
     (jdbc/query db ["SELECT * FROM blob"]))
@@ -22,4 +22,4 @@
          {:id id}
          {:errors ["Failed to add blob."]}))
      (catch SQLException ex
-       {:errors [(format "Film not added due to %s" (.getMessage ex))]}))))
+       {:errors [(format "Blob not added due to %s" (.getMessage ex))]}))))

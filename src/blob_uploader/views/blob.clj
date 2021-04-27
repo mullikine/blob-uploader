@@ -45,7 +45,7 @@
   (page
    [:div.container.jumbotron.bg-light
     [:div.row
-     [:h2 "Film"]]
+     [:h2 "Blob"]]
     (blob-attributes-view name description rating)
     (when errors
       (for [error (doall errors)]
@@ -60,7 +60,7 @@
   [blobs {:keys [messages]}]
   (page
    [:div.container.jumbotron.bg-light
-    [:div.row [:h2 "Films"]]
+    [:div.row [:h2 "Blobs"]]
     (for [{:keys [name description rating]} (doall blobs)]
       [:div
        (blob-attributes-view name description rating)
