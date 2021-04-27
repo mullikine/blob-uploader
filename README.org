@@ -44,6 +44,13 @@ Run =go= to prep and initiate the system.
   x -sh "lein repl" -e "user=>" -s "(dev)" -c m -e "dev=>" -s "(go)" -c m -i
 #+END_SRC
 
+#+BEGIN_EXPORT html
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/dZTLPY11S771XvQYtAxSene9g" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/dZTLPY11S771XvQYtAxSene9g.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/dZTLPY11S771XvQYtAxSene9g.js" id="asciicast-dZTLPY11S771XvQYtAxSene9g" async></script>
+#+END_EXPORT
+
 By default this creates a web server at [[http://localhost:3000]].
 
 When you make changes to your source files, use =reset= to reload any
