@@ -6,7 +6,7 @@
 (defprotocol FilmDatabase
   (list-blobs [db])
   (fetch-blobs-by-name [db name])
-  (create-blob [db film]))
+  (create-blob [db blob]))
 
 (extend-protocol FilmDatabase
   duct.database.sql.Boundary
@@ -15,9 +15,9 @@
   (fetch-blobs-by-name [{db :spec} name]
     (let [search-term (str "%" name "%")]
       (jdbc/query db ["SELECT * FROM blob WHERE LOWER(name) like LOWER(?)" search-term])))
-  (create-blob [{db :spec} film]
+  (create-blob [{db :spec} blob]
     (try
-     (let [result (jdbc/insert! db :blob film)]
+     (let [result (jdbc/insert! db :blob blob)]
        (if-let [id (val (ffirst result))]
          {:id id}
          {:errors ["Failed to add blob."]}))

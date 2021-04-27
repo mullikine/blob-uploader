@@ -15,8 +15,8 @@
  {[:get "/"] [:index]
   "/add-blob"
   {:get [:blob/show-create]
-   [:post {blob-form :form-params}] [:film/create film-form]}
-  [:get "/list-blobs"] [:film/list]
+   [:post {blob-form :form-params}] [:blob/create blob-form]}
+  [:get "/list-blobs"] [:blob/list]
   "/find-by-name"
   {:get [:blob/show-search]
    [:post {search-form :form-params}] [:blob/find-by-name search-form]}}
