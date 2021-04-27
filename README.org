@@ -46,9 +46,9 @@ Run =go= to prep and initiate the system.
 
 #+BEGIN_EXPORT html
 <!-- Play on asciinema.com -->
-<!-- <a title="asciinema recording" href="https://asciinema.org/a/dZTLPY11S771XvQYtAxSene9g" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/dZTLPY11S771XvQYtAxSene9g.svg" /></a> -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/pwEKV1qo7emHPwjxdkLsm8kx3" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/pwEKV1qo7emHPwjxdkLsm8kx3.svg" /></a> -->
 <!-- Play on the blog -->
-<script src="https://asciinema.org/a/dZTLPY11S771XvQYtAxSene9g.js" id="asciicast-dZTLPY11S771XvQYtAxSene9g" async></script>
+<script src="https://asciinema.org/a/pwEKV1qo7emHPwjxdkLsm8kx3.js" id="asciicast-pwEKV1qo7emHPwjxdkLsm8kx3" async></script>
 #+END_EXPORT
 
 By default this creates a web server at [[http://localhost:3000]].
