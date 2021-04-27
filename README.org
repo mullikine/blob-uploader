@@ -81,8 +81,10 @@ But you can also run tests through Leiningen.
 First you need to build the uberjar for the application that will be
 included in the docker container(s).
 
-#+BEGIN_SRC sh
-    lein do clean, uberjar
+This is needed before running =docker-compose=.
+
+#+BEGIN_SRC sh -n :sps bash :async :results none
+  lein do clean, uberjar
 #+END_SRC
 
 You will need to set the =DB_PASSWORD= environment variable to a
