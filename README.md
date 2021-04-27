@@ -115,7 +115,3 @@ To stop the docker compose services run:
 ``` sh
 docker-compose down
 ```
-
-## Legal
-
-Copyright © 2018 Chris Howe-Jones
