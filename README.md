@@ -1,6 +1,6 @@
-# film-ratings
+# blob-uploader
 
-[![CircleCI](https://circleci.com/gh/chrishowejones/blog-film-ratings.svg?style=svg)](https://circleci.com/gh/chrishowejones/blog-film-ratings)
+[![CircleCI](https://circleci.com/gh/chrishowejones/blog-blob-uploader.svg?style=svg)](https://circleci.com/gh/chrishowejones/blog-blob-uploader)
 
 This is an example Clojure web application written using the Duct
 framework. This code is referenced by my blog on [Building a Clojure
@@ -105,11 +105,11 @@ To see the logs from the docker compose services you can use:
 ``` sh
 docker-compose logs
 docker-compose logs --tail=20
-docker-compose logs filmapp
+docker-compose logs blobapp
 ```
 The first command shows the entire logs for both services. The second
 shows the last 20 lines of the log for both services. The last command
-displays the logs for just the filmapp service.
+displays the logs for just the blobapp service.
 
 ## Stopping running docker compose
 

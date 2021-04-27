@@ -11,11 +11,11 @@ configure_aws_cli(){
 
 deploy_cluster() {
 
-    family="film_ratings_app"
+    family="blob_uploader_app"
 
     make_task_def
     register_definition
-    if [[ $(aws ecs update-service --cluster film_ratings_cluster  --service film_ratings_app_service --task-definition $revision | \
+    if [[ $(aws ecs update-service --cluster blob_uploader_cluster  --service blob_uploader_app_service --task-definition $revision | \
                    $JQ '.service.taskDefinition') != $revision ]]; then
         echo "Error updating service."
         return 1
@@ -24,7 +24,7 @@ deploy_cluster() {
     # wait for older revisions to disappear
     # not really necessary, but nice for demos
     for attempt in {1..15}; do
-        if stale=$(aws ecs describe-services --cluster film_ratings_cluster --services film_ratings_app_service | \
+        if stale=$(aws ecs describe-services --cluster blob_uploader_cluster --services blob_uploader_app_service | \
                        $JQ ".services[0].deployments | .[] | select(.taskDefinition != \"$revision\") | .taskDefinition"); then
             echo "Waiting for stale deployments:"
             echo "$stale"
@@ -41,7 +41,7 @@ deploy_cluster() {
 make_task_def(){
 	task_template='[
                 {
-                    "name": "film_ratings_app",
+                    "name": "blob_uploader_app",
                     "image": "%s:%s",
                     "essential": true,
                     "portMappings": [
@@ -63,7 +63,7 @@ make_task_def(){
                     "logConfiguration": {
                       "logDriver": "awslogs",
                       "options": {
-                        "awslogs-group": "film_ratings_app",
+                        "awslogs-group": "blob_uploader_app",
                         "awslogs-region": "eu-west-1",
                         "awslogs-stream-prefix": "ecs"
                       }

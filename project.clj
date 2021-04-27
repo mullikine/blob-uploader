@@ -1,4 +1,4 @@
-(defproject film-ratings "0.2.0"
+(defproject blob-uploader "0.2.0"
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
   :min-lein-version "2.0.0"
@@ -14,8 +14,8 @@
                  [org.clojure/core.rrb-vector "0.0.13"] ;; required for JDK11+
                  [hiccup "1.0.5"]]
   :plugins [[duct/lein-duct "0.10.6"]]
-  :main ^:skip-aot film-ratings.main
-  :uberjar-name "film-ratings.jar"
+  :main ^:skip-aot blob-uploader.main
+  :uberjar-name "blob-uploader.jar"
   :resource-paths ["resources" "target/resources"]
   :prep-tasks     ["javac" "compile" ["run" ":duct/compiler"]]
   :profiles
