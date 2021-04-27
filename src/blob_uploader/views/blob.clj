@@ -1,23 +1,23 @@
-(ns blob-uploader.views.film
+(ns blob-uploader.views.blob
   (:require [blob-uploader.views.template :refer [page labeled-radio]]
             [hiccup.form :refer [form-to label text-field text-area submit-button]]
             [ring.util.anti-forgery :refer [anti-forgery-field]]))
 
-(defn create-film-view
+(defn create-blob-view
   []
   (page
    [:div.container.jumbotron.bg-light
     [:div.row
-     [:h2 "Add a film"]]
+     [:h2 "Add a blob"]]
     [:div
-     (form-to [:post "/add-film"]
+     (form-to [:post "/add-blob"]
               (anti-forgery-field)
               [:div.form-group.col-12
                (label :name "Name:")
-               (text-field {:class "mb-3 form-control" :placeholder "Enter film name"} :name)]
+               (text-field {:class "mb-3 form-control" :placeholder "Enter blob name"} :name)]
               [:div.form-group.col-12
                (label :description "Description:")
-               (text-area {:class "mb-3 form-control" :placeholder "Enter film description"} :description)]
+               (text-area {:class "mb-3 form-control" :placeholder "Enter blob description"} :description)]
               [:div.form-group.col-12
                (label :ratings "Rating (1-5):")]
               [:div.form-group.btn-group.col-12
@@ -25,7 +25,7 @@
               [:div.form-group.col-12.text-center
                (submit-button {:class "btn btn-primary text-center"} "Add")])]]))
 
-(defn- film-attributes-view
+(defn- blob-attributes-view
   [name description rating]
   [:div
    [:div.row
@@ -40,13 +40,13 @@
       [:div.col-2 "Rating:"]
       [:div.col-10 rating]])])
 
-(defn film-view
+(defn blob-view
   [{:keys [name description rating]} {:keys [errors messages]}]
   (page
    [:div.container.jumbotron.bg-light
     [:div.row
      [:h2 "Film"]]
-    (film-attributes-view name description rating)
+    (blob-attributes-view name description rating)
     (when errors
       (for [error (doall errors)]
        [:div.row.alert.alert-danger
@@ -56,31 +56,31 @@
        [:div.row.alert.alert-success
         [:div.col message]]))]))
 
-(defn list-films-view
-  [films {:keys [messages]}]
+(defn list-blobs-view
+  [blobs {:keys [messages]}]
   (page
    [:div.container.jumbotron.bg-light
     [:div.row [:h2 "Films"]]
-    (for [{:keys [name description rating]} (doall films)]
+    (for [{:keys [name description rating]} (doall blobs)]
       [:div
-       (film-attributes-view name description rating)
+       (blob-attributes-view name description rating)
        [:hr]])
     (when messages
       (for [message (doall messages)]
        [:div.row.alert.alert-success
         [:div.col message]]))]))
 
-(defn search-film-by-name-view
+(defn search-blob-by-name-view
   []
   (page
    [:div.container.jumbotron.bg-light
     [:div.row
-     [:h2 "Search for film by name"]]
+     [:h2 "Search for blob by name"]]
     [:div
      (form-to [:post "/find-by-name"]
               (anti-forgery-field)
               [:div.form-group.col-12
                (label :name "Name:")
-               (text-field {:class "mb-3 form-control" :placeholder "Enter film name"} :name)]
+               (text-field {:class "mb-3 form-control" :placeholder "Enter blob name"} :name)]
               [:div.form-group.col-12.text-center
                (submit-button {:class "btn btn-primary text-center"} "Search")])]]))

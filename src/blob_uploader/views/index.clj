@@ -6,10 +6,10 @@
     [:div.container.jumbotron.bg-white.text-center
      [:row
       [:p
-       [:a.btn.btn-primary {:href "/add-film"} "Add a Film"]]]
+       [:a.btn.btn-primary {:href "/add-blob"} "Add a Film"]]]
      [:row
       [:p
-       [:a.btn.btn-primary {:href "/list-films"} "List Films"]]]
+       [:a.btn.btn-primary {:href "/list-blobs"} "List Films"]]]
      [:row
       [:p
        [:a.btn.btn-primary {:href "/find-by-name"} "Search Films"]]]]))
